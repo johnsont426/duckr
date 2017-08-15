@@ -17,17 +17,6 @@ class AuthenticateContainer extends React.Component {
   		.then(() => this.props.history.push({pathname: '/feed'}))
   }
   componentDidMount () {
-    firebaseAuth().onAuthStateChanged((user) => {
-      if (user) {
-        const userData = user.providerData[0]
-        const userInfo = formatUserInfo(userData.displayName, userData.photoURL, user.uid)
-        this.props.authUser(user.uid)
-        this.props.fetchingUserSuccess(user.uid, userInfo, Date.now())
-        this.props.history.push({pathname: '/feed'})
-      } else {
-        this.props.removeFetchingUser()
-      }
-    })
     this.props.checkAuth.apply(this)
   }
   render () {

@@ -37,7 +37,7 @@ export default function Duck (props) {
         props.goToDuckDetail === null
           ? null
           : (e) => {
-            e.preventDefault()
+            e.stopPropagation()
             props.goToDuckDetail(props.duck.duckId)
           }
         }>
@@ -47,7 +47,7 @@ export default function Duck (props) {
             <div 
               onClick={
                 (e) => {
-                  e.preventDefault()
+                  e.stopPropagation()
                   props.goToProfile(props.duck.uid)
                 }
               }

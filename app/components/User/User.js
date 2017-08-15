@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { userContainer, header } from './styles.css'
 import { errorMsg } from 'sharedStyles/styles.css'
+import { DuckContainer } from 'containers'
 
 export default function User (props) {
   return (
@@ -17,7 +18,9 @@ export default function User (props) {
 	              {props.duckIds.map((id) => (
 	                <DuckContainer
 	                  duckId={id}
-	                  key={id} />
+	                  key={id}
+	                  goToProfile={props.goToProfile}
+          					goToDuckDetail={props.goToDuckDetail} />
 	              ))}
 	              {props.duckIds.size === 0
 	                ? <p className={header}>
