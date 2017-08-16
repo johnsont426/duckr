@@ -47,7 +47,7 @@ export default function DuckDetails ({duckId, isFetching, authedUser, error, goT
               <Reply submit={(replyText) => addAndHandleReply(duckId, formatReply(authedUser, replyText))} />
             </div>
             <div className={repliesContainer}>
-              <RepliesContainer />
+              <RepliesContainer duckId={duckId}/>
             </div>
     			</div>}
     	{error ? <p className={errorMsg}>{error}</p> : null}
