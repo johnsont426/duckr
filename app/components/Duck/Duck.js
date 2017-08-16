@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import { formatTimestamp } from 'helpers/utils'
 import Reply from 'react-icons/lib/fa/mail-reply'
 import Star from 'react-icons/lib/fa/star'

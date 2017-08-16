@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { BrowserRouter, Route, hashHistory, IndexRoute, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, hashHistory, Switch } from 'react-router-dom'
 import { HomeContainer, AuthenticateContainer, FeedContainer, LogoutContainer, UserContainer, DuckDetailsContainer } from 'containers'
 import { Navigation } from 'components'
 import { connect } from 'react-redux'
@@ -40,7 +40,9 @@ class MainContainer extends React.Component {
 					        <Route path='/feed' render={(props) => <FeedContainer {...props} checkAuth={this.props.checkAuth} />} />
 					        <Route path='/logout' component={LogoutContainer} />
 					        <Route path='/duckDetail/:duckId' render={(props) => <DuckDetailsContainer {...props} checkAuth={this.props.checkAuth} />} />
+					        <Route path='/duckDetail' component={HomeContainer} />
 					        <Route path='/:uid' render={(props) => <UserContainer {...props} checkAuth={this.props.checkAuth} />} />
+					        <Route component={HomeContainer} />
 					      </Switch>
 				      </div>
 				    </div>
