@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { BrowserRouter, Route, hashHistory, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, Switch, hashHistory } from 'react-router-dom'
+import { Router } from 'react-router'
 import { HomeContainer, AuthenticateContainer, FeedContainer, LogoutContainer, UserContainer, DuckDetailsContainer } from 'containers'
 import { Navigation } from 'components'
 import { connect } from 'react-redux'
@@ -10,6 +11,9 @@ import { firebaseAuth } from 'config/constants'
 import * as userActionCreators from 'redux/modules/users'
 import * as usersLikesActionCreators from 'redux/modules/usersLikes'
 import { formatUserInfo } from 'helpers/utils'
+import createHistory from 'history/createBrowserHistory';
+
+const history = createHistory();
 
 
 class MainContainer extends React.Component {
@@ -30,7 +34,7 @@ class MainContainer extends React.Component {
 		return this.props.isFetching === true
 			? null
 			: (
-					<BrowserRouter history={hashHistory}>
+					<Router history={history}>
 						<div className={container}>
 				      <Navigation isAuthed={this.props.isAuthed} />
 				      <div className={innerContainer}>
@@ -46,7 +50,7 @@ class MainContainer extends React.Component {
 					      </Switch>
 				      </div>
 				    </div>
-				  </BrowserRouter>
+				  </Router>
 				)
 	}
 }

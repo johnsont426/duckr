@@ -7,18 +7,22 @@
     "start": "webpack-dev-server",
     "production": "webpack -p",
     "lint": "eslint app/.; exit 0",
-    "fix": "eslint --fix app/.; exit 0"
+    "fix": "eslint --fix app/.; exit 0",
+    "deploy": "npm run production && firebase deploy",
+    "firebase-init": "firebase login && firebase init"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "firebase": "^4.2.0",
+    "immutable": "^3.8.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-icons": "^2.2.5",
     "react-modal": "^2.2.3",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.1.2",
+    "react-router-redux": "^4.0.8",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0"
   },
@@ -30,6 +34,7 @@
     "babel-preset-react-hmre": "^1.1.1",
     "babel-preset-stage-0": "^6.24.1",
     "css-loader": "^0.28.4",
+    "firebase-tools": "^3.9.2",
     "html-webpack-plugin": "^2.30.1",
     "style-loader": "^0.18.2",
     "webpack": "^3.5.4",

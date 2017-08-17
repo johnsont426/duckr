@@ -66,7 +66,7 @@ export function addAndHandleReply (duckId, reply) {
 }
 
 export function fetchAndHandleReplies (duckId) {
-  return function (dispatch) {
+  return function (dispatch, getState) {
     dispatch(fetchingReplies())
 
     fetchReplies(duckId)

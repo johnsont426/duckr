@@ -33,7 +33,7 @@ function checkAuth () {
 
 ReactDOM.render(
   <Provider store={store}>
-		<MainContainer checkAuth={checkAuth}/>
+		<MainContainer checkAuth={checkAuth} />
   </Provider>,
 	document.getElementById('app')
 )

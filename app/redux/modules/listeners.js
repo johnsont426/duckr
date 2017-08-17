@@ -1,5 +1,7 @@
 const ADD_LISTENER = 'ADD_LISTENER'
 
+import { Map } from 'immutable'
+
 export function addListener (listenerId) {
   return {
     type: ADD_LISTENER,
@@ -7,13 +9,12 @@ export function addListener (listenerId) {
   }
 }
 
-export default function listeners (state = {}, action) {
+export default function listeners (state = Map({}), action) {
   switch (action.type) {
     case ADD_LISTENER :
-      return {
-        ...state,
+      return state.merge({
         [action.listenerId]: true,
-      }
+      })
     default :
       return state
   }
