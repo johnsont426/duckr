@@ -9,7 +9,7 @@ import { firebaseAuth } from 'config/constants'
 
 class AuthenticateContainer extends React.Component {
 	constructor (props) {
-		super(props);
+		super(props)
 		this.handleAuth = this.handleAuth.bind(this)
 	}
   handleAuth () {

@@ -13,7 +13,7 @@ import * as usersLikesActionCreators from 'redux/modules/usersLikes'
 import { formatUserInfo } from 'helpers/utils'
 import createHistory from 'history/createBrowserHistory';
 
-const history = createHistory();
+const history = createHistory()
 
 
 class MainContainer extends React.Component {
